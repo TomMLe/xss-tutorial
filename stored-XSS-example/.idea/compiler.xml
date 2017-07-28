@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="stored-XSS-example_main" target="1.7" />
+      <module name="stored-XSS-example_test" target="1.7" />
+      <module name="Stored_XSS_example_main" target="1.8" />
+      <module name="Stored_XSS_example_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
