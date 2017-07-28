@@ -23,7 +23,7 @@ $ git clone https://github.com/TomMLe/xss-tutorial.git
 
 Generally, there are two types of malicious scripts - persistent scripts and non-persistent scripts. A much less well-known type is called DOM Based XSS. 
 
-###Stored XSS Attacks:
+### Stored XSS Attacks:
 Stored XSS are permanently injected in the database, the comment field, etc. These injected scripts are recently called **persistent scripts**. Go ahead and try injecting scripts in the website. Here are the steps:
 
     
@@ -68,7 +68,7 @@ Stored XSS are permanently injected in the database, the comment field, etc. The
 
 **Conclusion:** As I'd mentioned before, these attacks are called stored XSS because these scripts will permanently stay on the site. As soon as you open this site, you will immediately be alerted every time. However, instead of just alerting, people can change your site's contents, redirect users to other sites, etc.
 	
-###Reflected XSS Attacks:
+### Reflected XSS Attacks:
 Reflected XSS are injected **non-persistent** scripts that got reflected off the web server (error message, search result, etc.).
 
 
