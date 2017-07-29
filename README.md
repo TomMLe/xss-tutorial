@@ -67,8 +67,58 @@ Stored XSS are permanently injected in the database, the comment field, etc. The
 **Conclusion:** As I'd mentioned before, these attacks are called stored XSS because these scripts will permanently stay on the site. As soon as you open this site, you will immediately be alerted every time. However, instead of just alerting, people can change your site's contents, redirect users to other sites, etc.
 	
 ### Reflected XSS Attacks:
-Reflected XSS are injected **non-persistent** scripts that got reflected off the web server (error message, search result, etc.).
+Reflected XSS are injected **non-persistent** scripts that got reflected off the web server (error message, search result, etc.). The reason these attacks are called reflected is because the user must click a link, or submit a form, or visit a link for the injected code to travel to vulnerable site then reflects the attack to the user's browser.
 
+Try this example here to have a better understanding of reflected XSS attacks.
+
+* **Step 1**: Change dir to the reflected XSS file. In my case:
+
+	```
+	$ cd ~/Documents/Coding/repos/xss-tutorial/reflected-XSS-example
+	```
+
+* **Step 2**: Run the example website with Gradle:
+
+ 	```			
+	$ gradle jettyRun
+	```
+* **Step 3**: You will see something like this
+
+![](http://i.imgur.com/iyjKrkR.png)
+
+* **Step 4**: Again, play around with it. Enter your name, the site will say hello to you
+
+![](http://i.imgur.com/KQg24MS.png)
+
+* **Step 5**: Now try XSS on this site by opening the bold tag. You should expect to see the testing text turns into bold since we didn't close the bold tag.
+
+![](http://i.imgur.com/9iR3ayH.png)
+
+* **Step 6**: Now let's try to inject script in here
+
+![](http://i.imgur.com/7RDhemq.png)
+
+![](http://i.imgur.com/GiFkOkL.png)
+
+You might see that it doesn't work. Simply because some browsers have protection against XSS. If you wish to know more about these things, here is a discussion on [how Chrome is secured against Reflected XSS](https://security.stackexchange.com/questions/53474/is-chrome-completely-secure-against-reflected-xss)
+
+For the purpose of this tutorial, you should click **visiting the site's homepage**.
+
+![](http://i.imgur.com/h1E8NGm.png)
+
+Then click the link above.
+
+The result?:
+
+![](http://i.imgur.com/mqCkLdF.png)
+
+### Malicious scripts
+
+These examples above use the generic alert scripts to serve the purpose of understanding of how XSS works. But what do malicious scripts look like or what can they do?
+
+The most severe attacks aim to steal the user's session cookie. The attacker can easily steal your accounts and information from the cookie. Besides stealing cookies, they have the ability to install Trojan programs, redirect user to other site or change the content of your site.
+
+For a more hand-on experience with how the malicious scripts work, visit this Youtube page and watch this very intuitive video on this subject[ by DrapsTV.](https://www.youtube.com/watch?v=Iu3QtMy9cpg)
 
 # How to prevent the attacks
 
