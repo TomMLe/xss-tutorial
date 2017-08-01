@@ -126,9 +126,11 @@ To prevent an attack, we need to know the filters for our website and how attack
 
 Sites could escape before inserting untrusted data into HTML content. They would do that by converting a certain characters used in scripts such as >, <, ", ', /, &, etc. into HTML entities or hex entities. Those entities basically means that a < would appear as ```&lt;``` instead. For more entities, visit a site on [HTML entities](https://www.w3schools.com/html/html_entities.asp). 
 
-However, attackers could inject something like ```<script>alert(String.fromCharCode(88,83,83));</script>``` and get the same result as ```<script>alert("XSS");</script>``` without being detected. What we can do to prevent this is to block out all the script tags &lt;script&gt; to begin with. Sometimes, that filter wouldn't help you neither since javascript can be ran off the browser's address bar by injecting something like ```<a href=javascript:alert(String.fromCharCode(88,83,83)) Click</a>```. This script will show up in the site as a link that will alert XSS to the brower.
+However, attackers could inject something like ```<script>alert(String.fromCharCode(88,83,83));</script>``` and get the same result as ```<script>alert("XSS");</script>``` without being detected. What we can do to prevent this is to block out all the script tags &lt;script&gt; to begin with. Sometimes, that filter wouldn't help you neither since javascript can be ran off the browser's address bar by injecting something like ```<a> href=javascript:alert(String.fromCharCode(88,83,83)) Click</a>```. This script will show up in the site as a link that will alert XSS to the brower.
 
-![]()
+![](http://i.imgur.com/x7KGNoS.png)
+
+![](http://i.imgur.com/iiMLB27.png)
 
 To learn more on how to protect XSS on your site, visit the OWASP XSS Prevention [Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
 
